@@ -1,17 +1,28 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello></hello>
+    <page :pageData=pageData></page>
   </div>
 </template>
 
 <script>
 import Hello from './components/Hello'
+import Page from './components/Page'
 
 export default {
   name: 'app',
   components: {
-    Hello
+    Hello,
+    Page
+  },
+  data () {
+    return {
+      pageData: {
+        currentPage: 2,
+        perPageNum: 20,
+        totalPage: 2
+      }
+    }
   }
 }
 </script>
@@ -25,4 +36,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>

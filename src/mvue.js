@@ -1,2 +1,2 @@
-import VuePage from './components/page.vue'
+import VuePage from './components/Page.vue'
 window.VuePage = VuePage

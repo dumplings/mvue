@@ -43,86 +43,81 @@
 </template>
 
 <script>
+export default {
+    props: {
+        pageData: {
+            type: Object,
+            require: true
+        }
+    },
+    mounted () {
+        let self = this
 
-    export default {
-        props: {
-            pageData: {
-                type: Object,
-                require: true
-            }
-        },
-        ready () {
+        self.insertPage()
 
-        },
-
-        created () {
-            let self = this
-
+        self.$watch('pageData.currentPage', function(val) {
             self.insertPage()
+        })
+        self.$watch('pageData.totalPage', function(val) {
+            self.insertPage()
+        })
+    },
 
-            self.$watch('pageData.currentPage', function(val) {
-                self.insertPage()
-            })
-            self.$watch('pageData.totalPage', function(val) {
-                self.insertPage()
-            })
-        },
+    data () {
+        return {
+            goToNum: 1,
+            pageShowArray: []
+        }
+    },
 
-        data () {
-            return {
-                goToNum: 1,
-                pageShowArray: []
-            }
-        },
-
-        methods: {
-            insertPage () {
-                let self = this
-                self.pageShowArray = []
-                if(self.pageData.totalPage<=8 || self.pageData.currentPage<=4) {
-                    let nowTotalPage = self.pageData.totalPage>8?8:self.pageData.totalPage
-                    for(let i=1;i<=nowTotalPage;i++) {
+    methods: {
+        insertPage () {
+            let self = this
+            self.pageShowArray = []
+            if(self.pageData.totalPage<=8 || self.pageData.currentPage<=4) {
+                let nowTotalPage = self.pageData.totalPage>8?8:self.pageData.totalPage
+                for(let i=1;i<=nowTotalPage;i++) {
+                    self.pageShowArray.push(i);
+                }
+            } else {
+                if(self.pageData.currentPage>4&&self.pageData.currentPage<=self.pageData.totalPage-4) {
+                    for(let i=self.pageData.currentPage-3;i<=self.pageData.currentPage+4;i++) {
                         self.pageShowArray.push(i);
                     }
                 } else {
-                    if(self.pageData.currentPage>4&&self.pageData.currentPage<=self.pageData.totalPage-4) {
-                        for(let i=self.pageData.currentPage-3;i<=self.pageData.currentPage+4;i++) {
-                            self.pageShowArray.push(i);
-                        }
-                    } else {
-                        for(let i=self.pageData.totalPage-7;i<=self.pageData.totalPage;i++) {
-                            self.pageShowArray.push(i);
-                        }
+                    for(let i=self.pageData.totalPage-7;i<=self.pageData.totalPage;i++) {
+                        self.pageShowArray.push(i);
                     }
                 }
-            },
-
-            gotoPage () {
-                let thisNum = parseInt(this.goToNum)
-                if(thisNum > this.pageData.totalPage) {
-                    this.badPageSelect(2)
-                } else {
-                    if(thisNum != this.pageData.currentPage) {
-                        this.selectPageByNum(thisNum)
-                   }
-                }
-            },
-
-            selectPage (num, type) {
-                if(!type) {
-                    let thisNum = parseInt(num)
-                    this.selectPageByNum(thisNum)
-                }
-            },
-
-            badPageSelect (status) {
-                this.$dispatch('bad-page-select', status)
-            },
-
-            selectPageByNum (num) {
-                this.$dispatch('page-back-num', num)
             }
+        },
+
+        gotoPage () {
+            let thisNum = parseInt(this.goToNum)
+            if(thisNum > this.pageData.totalPage) {
+                this.badPageSelect(2)
+            } else {
+                if(thisNum != this.pageData.currentPage) {
+                    this.selectPageByNum(thisNum)
+               }
+            }
+        },
+
+        selectPage (num, type) {
+            if(!type) {
+                let thisNum = parseInt(num)
+                this.selectPageByNum(thisNum)
+            }
+        },
+
+        badPageSelect (status) {
+            this.$dispatch('bad-page-select', status)
+        },
+
+        selectPageByNum (num) {
+            this.$dispatch('page-back-num', num)
         }
     }
+}
 
 </script>
