@@ -7,7 +7,7 @@
 
 #### Page 分页
 
-[2333](https://github.com/jiakeqi/mvue/tree/master/src/components/page/README.md)
+[文档](https://github.com/jiakeqi/mvue/tree/master/src/components/page/README.md)
 
 ## 编译
 
