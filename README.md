@@ -12,8 +12,8 @@ npm install mvue -S
 ```
 ## 使用
 ``` JavaScript
-import {Page} from '../dist/mvue.js'
-Vue.component(Page.name, Page);
+import {Page} from 'mvue'
+Vue.component(Page.name, Page)
 ```
 ## 编译
 
