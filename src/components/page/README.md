@@ -11,14 +11,12 @@
 ``` javascript
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <mvue-page :current="2" :total="40" :currentChange='currentChange'></mvue-page>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-import {Page} from '../dist/mvue.js'
+import {Page} from 'mvue'
 import Vue from 'vue'
 Vue.component(Page.name, Page);
 export default {
