@@ -3,12 +3,18 @@
 > A Vue.js Component
 
 
+## 文档
+[Page 分页](https://github.com/jiakeqi/mvue/tree/master/src/components/page/README.md)
+
+## 安装
+``` shell
+npm install mvue -S
+```
 ## 使用
-
-#### Page 分页
-
-[文档](https://github.com/jiakeqi/mvue/tree/master/src/components/page/README.md)
-
+``` JavaScript
+import {Page} from '../dist/mvue.js'
+Vue.component(Page.name, Page);
+```
 ## 编译
 
 ``` bash
