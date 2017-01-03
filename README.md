@@ -1,8 +1,15 @@
-# mvue
+# MVUE
 
-> A Vue.js project
+> A Vue.js Component
 
-## Build Setup
+
+## 使用
+
+#### Page 分页
+
+[2333](https://github.com/jiakeqi/mvue/tree/master/src/components/page/README.md)
+
+## 编译
 
 ``` bash
 # install dependencies
@@ -17,8 +24,4 @@ npm run build
 # run unit tests
 npm run unit
 
-# run all tests
-npm test
 ```
-
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

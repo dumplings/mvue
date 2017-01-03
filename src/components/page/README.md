@@ -1,3 +1,14 @@
+### page 分页
+
+| 参数           | 说明           | 类型   | 默认值 |
+| ------------- |-------------| ----- | --- |
+| current      | 当前选中索引 | Number | 1 |
+| total     | 总条目数      | Number | 1 |
+| currentChange | 索引更改回调    | Function | - |
+
+
+### 使用
+``` javascript
 <template>
   <div id="app">
     <img src="./assets/logo.png">
@@ -19,16 +30,4 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus">
-
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-
-</style>
+```
