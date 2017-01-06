@@ -58,17 +58,6 @@ export default {
       this.$set(this, 'pageShowArray', arr)
     },
 
-    gotoPage () {
-      let thisNum = parseInt(this.goToNum)
-      if(thisNum > this.total) {
-        this.badPageSelect(2)
-      } else {
-        if(thisNum != this.currentIndex) {
-          this.selectPageByNum(thisNum)
-        }
-      }
-    },
-
    pre () {
       if (this.currentIndex <= this.displayCount) {return;}
       this.setIndex(this.currentIndex - this.displayCount)

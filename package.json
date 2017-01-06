@@ -10,7 +10,7 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "test": "npm run unit"
   },
-  "main": "dist/iview.js",
+  "main": "dist/mvue.js",
   "files": [
     "dist",
     "src"
