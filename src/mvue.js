@@ -1,22 +1,27 @@
 import Page from './components/page';
+import Tree from './components/tree'
 
 const mvue = {
-    Page
+  Page,
+  Tree
 };
 
-const install = function (Vue) {
-    Object.keys(mvue).forEach((key) => {
-      console.log(key, mvue[key]);
-        Vue.component(key, mvue[key]);
-    });
-};
+const install = function(Vue, opts = {}) {
+  /* istanbul ignore if */
+  if (install.installed) return;
+
+  Vue.component(Page.name, Page);
+  Vue.component(Tree.name, Tree);
+}
 
 // auto install
 if (typeof window !== 'undefined' && window.Vue) {
-    install(window.Vue);
+  install(window.Vue);
 }
 
 module.exports = {
+  version: '0.0.1',
   install,
-  Page
+  Page,
+  Tree
 }

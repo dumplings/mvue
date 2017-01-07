@@ -7,14 +7,18 @@
 
 <script>
 import Hello from './components/Hello'
-import {Page} from '../dist/mvue.js'
 import Vue from 'vue'
-Vue.component(Page.name, Page);
+import {Page} from '../dist/mvue.js'
+Vue.use(Page);
+// or
+// import mvue from '../dist/mvue.js'
+// Vue.use(mvue);
+
 export default {
   name: 'app',
   methods: {
     currentChange: function(current) {
-      console.log(current);
+      console.log('当前索引是',current);
     }
   }
 }

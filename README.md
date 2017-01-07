@@ -13,21 +13,18 @@ npm install mvue -S
 ## 使用
 ``` JavaScript
 import {Page} from 'mvue'
-Vue.component(Page.name, Page)
+Vue.use(Page)
 ```
 ## 编译
 
 ``` bash
-# install dependencies
+# 安装依赖
 npm install
 
-# serve with hot reload at localhost:8080
+# 运行项目 localhost:8080
 npm run dev
 
-# build for production with minification
-npm run build
-
-# run unit tests
-npm run unit
+# 打包 dist 文件
+npm run prod
 
 ```

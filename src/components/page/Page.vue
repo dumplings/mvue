@@ -58,7 +58,7 @@ export default {
       this.$set(this, 'pageShowArray', arr)
     },
 
-   pre () {
+    pre () {
       if (this.currentIndex <= this.displayCount) {return;}
       this.setIndex(this.currentIndex - this.displayCount)
       this.insertPage()
