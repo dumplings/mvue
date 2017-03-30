@@ -3,20 +3,19 @@
 > A Vue.js Component
 
 
-## 文档
+## Doc
 [Page 分页](https://github.com/jiakeqi/mvue/tree/master/src/components/page/README.md)
 
-## 安装
+## Install
 ``` shell
 npm install mvue -S
 ```
-## 使用
+## Usage
 ``` JavaScript
 import {Page} from 'mvue'
 Vue.use(Page)
 ```
-## 编译
-
+## Build
 ``` bash
 # 安装依赖
 npm install
