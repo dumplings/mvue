@@ -4,7 +4,7 @@
 
 
 ## Doc
-[Page 分页](https://github.com/jiakeqi/mvue/tree/master/src/components/page/README.md)
+[Page](https://github.com/jiakeqi/mvue/tree/master/src/components/page/README.md)
 
 ## Install
 ``` shell
